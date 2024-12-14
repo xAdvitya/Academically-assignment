@@ -30,6 +30,17 @@ This is the submission for the MERN Stack Intern assignment. The project is a ba
 - Role-based access control for Admin and User.  
 - Admin: Full access to manage courses.  
 - User: Can only browse and enroll in courses.  
+---
+
+## Default Credentials
+
+- **Admin**:
+  - Username: `admin`
+  - Password: `admin123`
+
+- **User**:
+  - Username: `user`
+  - Password: `user123`
 
 ---
 
@@ -57,9 +68,9 @@ This is the submission for the MERN Stack Intern assignment. The project is a ba
 
 3. Configure environment variables for backend (`.env` file):  
    ```plaintext  
-   MONGO_URI=your_mongo_db_connection_string  
-   JWT_SECRET=your_secret_key
-   PORT=local_port
+   JWT_SECRET_KEY="S0/4YA8Dib+0pMvO0KOiITv/14FSZ+/HBuW5HzVJiVI="
+   DATABASE_URL="mongodb+srv://Advityax:advityaadvitya@cluster0.cb6rj.mongodb.net/acad?retryWrites=true&w=majority&appName=Cluster0"
+   PORT=8800
    ```
 
 4. Pushing schema to mongodb
