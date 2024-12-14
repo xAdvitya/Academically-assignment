@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "46c2d360-48fe-45d7-b58f-7dee0b274642",
+		"name": "Academically-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14426150",
+		"_collection_link": "https://interstellar-comet-703296.postman.co/workspace/explore~d5e31186-4bef-420e-9cbe-e5d36c5c4e06/collection/14426150-46c2d360-48fe-45d7-b58f-7dee0b274642?action=share&source=collection_link&creator=14426150"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "b",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//     \"username\":\"admin\",\n//     \"password\":\"admin123\"\n// }\n\n{\n    \"username\":\"advitya\",\n    \"password\":\"advitya\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{BASE_URL}}/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Get Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/courses"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"title\": \"UI/UX Design Principles\",\n    \"description\": \"Understand the principles of user interface and user experience design.\",\n    \"duration\": \"10 hours\",\n    \"instructor\": \"Sarah Brown\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/admin/courses"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/admin/courses/675957ebb08990fc9cdfd61d"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"learn rust\",\n    \"description\":\"lear rust asap\",\n    \"duration\":\"20hrs\",\n    \"instructor\":\"rahul\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/admin/courses/675957ebb08990fc9cdfd61d"
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzMzOTExMzU5LCJleHAiOjIzMzg3MTEzNTl9.ZyNoNhFJDil5EXBo79wpADtOLtOgr4cdUw7DyxEbD4E"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzMzOTExMzU5LCJleHAiOjIzMzg3MTEzNTl9.ZyNoNhFJDil5EXBo79wpADtOLtOgr4cdUw7DyxEbD4E",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/enroll/675957ebb08990fc9cdfd61d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"enroll",
+								"675957ebb08990fc9cdfd61d"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/courses/675957ebb08990fc9cdfd61d"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost:8800",
+			"type": "string"
+		}
+	]
+}
